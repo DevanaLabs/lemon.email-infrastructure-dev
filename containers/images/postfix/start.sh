@@ -7,8 +7,6 @@ for VARIABLE in `env | cut -f1 -d=`; do
   sed -i "s={{ $VARIABLE }}=${!VARIABLE}=g" /etc/postfix/mysql/*.cf
 done
 
-echo "test"
-
 # Fix alias error
 postmap /etc/postfix/aliases
 
