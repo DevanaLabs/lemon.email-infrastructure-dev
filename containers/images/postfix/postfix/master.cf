@@ -154,5 +154,5 @@ smtp-amavis     unix    -       -       n       -       2       smtp
         -o receive_override_options=no_header_body_checks,no_unknown_recipient_checks
 
 
-policy-spf  unix  -       n       n       -       -       spawn
-     user=nobody argv=/usr/bin/postfix-policyd-spf-perl
+#policy-spf  unix  -       n       n       -       -       spawn
+#    user=nobody argv=/usr/bin/postfix-policyd-spf-perl
