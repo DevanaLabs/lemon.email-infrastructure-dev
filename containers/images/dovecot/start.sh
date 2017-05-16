@@ -6,7 +6,7 @@ for VARIABLE in `env | cut -f1 -d=`; do
   sed -i "s={{ $VARIABLE }}=${!VARIABLE}=g" /etc/dovecot/*.ext
 done
 
-if [ ! -d /var/mail ]
+if [ ! -d /var/mail ];then
   mkdir /var/mail
   chown lmail:lmail /var/mail
 fi
