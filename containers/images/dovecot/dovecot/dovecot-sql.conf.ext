@@ -29,6 +29,7 @@
 # );
 
 # Database driver: mysql, pgsql, sqlite
+
 driver = mysql
 
 # Database connection string. This is driver-specific setting.
@@ -68,6 +69,7 @@ driver = mysql
 #   connect = host=sql.example.com dbname=virtual user=virtual password=blarg
 #   connect = /etc/dovecot/authdb.sqlite
 #
+
 connect = host={{ MYSQLHOST }} dbname=postfixadmin user=root password={{ MYSQLPASS }}
 
 # Default password scheme.
@@ -75,8 +77,8 @@ connect = host={{ MYSQLHOST }} dbname=postfixadmin user=root password={{ MYSQLPA
 # List of supported schemes is in
 # http://wiki2.dovecot.org/Authentication/PasswordSchemes
 #
-default_pass_scheme = cleartext
 
+default_pass_scheme = cleartext
 
 # passdb query to retrieve the password. It can return fields:
 #   password - The user's password. This field must be returned.
@@ -105,7 +107,9 @@ default_pass_scheme = cleartext
 #   password_query = SELECT userid AS user, pw AS password \
 #     FROM users WHERE userid = '%u' AND active = 'Y'
 #
+
 password_query = SELECT username, '' as password, '' as nopassword FROM mailbox WHERE username='%u'
+
 #  SELECT username, domain, password \
 #  FROM users WHERE username = '%n' AND domain = '%d'
 
@@ -125,7 +129,9 @@ password_query = SELECT username, '' as password, '' as nopassword FROM mailbox 
 #   user_query = SELECT dir AS home, user AS uid, group AS gid FROM users where userid = '%u'
 #   user_query = SELECT home, 501 AS uid, 501 AS gid FROM users WHERE userid = '%u'
 #
+
 user_query = user_query = SELECT concat("/var/mail/vhosts/", "%d", "/", "%n") as home, 5000 as uid, 5000 as gid FROM virtual_usual_users WHERE email = '%u'
+
 #  SELECT home, uid, gid \
 #  FROM users WHERE username = '%n' AND domain = '%d'
 
