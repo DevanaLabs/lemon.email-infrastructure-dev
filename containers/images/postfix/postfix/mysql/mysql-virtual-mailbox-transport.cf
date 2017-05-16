@@ -1,0 +1,6 @@
+
+user = {{ MYSQLUSER }}
+password = {{ MYSQLPASS }}
+hosts = {{ MYSQLHOST }}
+dbname = postfixadmin
+query = SELECT transport FROM view_domain_transport WHERE domain='%s' and backupmx = 0 and active = 1

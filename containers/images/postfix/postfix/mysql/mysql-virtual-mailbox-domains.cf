@@ -1,0 +1,5 @@
+user = {{ MYSQLUSER }}
+password = {{ MYSQLPASS }}
+hosts = {{ MYSQLHOST }}
+dbname = postfixadmin
+query = SELECT domain FROM domain WHERE domain='%s' and backupmx = 0 and active = 1 and is_relay = 0
