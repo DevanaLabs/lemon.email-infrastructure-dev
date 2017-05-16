@@ -1,4 +1,3 @@
-
 user = {{ MYSQLUSER }}
 password = {{ MYSQLPASS }}
 hosts = {{ MYSQLHOST }}

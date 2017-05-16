@@ -12,9 +12,7 @@ echo "test"
 # Fix alias error
 postmap /etc/postfix/aliases
 
-# Actually run Postfix
+# Run Postfix
 rm -f /var/run/rsyslogd.pid
 rm -f /run/dovecot/master.pid
-
-#/usr/sbin/opendkim -x /etc/opendkim.conf 
 /usr/lib/postfix/master & rsyslogd -n

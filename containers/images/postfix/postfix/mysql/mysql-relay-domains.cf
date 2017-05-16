@@ -1,5 +1,0 @@
-user = {{ MYSQLUSER }}
-password = {{ MYSQLPASS }}
-hosts = {{ MYSQLHOST }}
-dbname = postfixadmin
-query = SELECT domain FROM domain WHERE domain = '%s' and is_relay = 1 and active = 1
