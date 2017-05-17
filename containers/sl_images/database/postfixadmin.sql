@@ -594,7 +594,7 @@ CREATE TABLE `mu_transport` (
 
 LOCK TABLES `mu_transport` WRITE;
 /*!40000 ALTER TABLE `mu_transport` DISABLE KEYS */;
-INSERT INTO `mu_transport` VALUES (1,'smtp:172.19.25.3:25',0,0);
+INSERT INTO `mu_transport` VALUES (1,'lmtp:172.19.25.4:24',0,0),(2,'smtp:172.19.25.3:25',0,1);
 /*!40000 ALTER TABLE `mu_transport` ENABLE KEYS */;
 UNLOCK TABLES;
 
