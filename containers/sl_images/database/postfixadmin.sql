@@ -113,7 +113,7 @@ CREATE TABLE `config` (
 
 LOCK TABLES `config` WRITE;
 /*!40000 ALTER TABLE `config` DISABLE KEYS */;
-INSERT INTO `config` VALUES (1,'version','740'),(40,'domain_default','lemon.local'),(20,'role_domain_admin','3'),(21,'role_domain_mailbox','4'),(47,'dns_spf_value',''),(46,'dns_mx_value','smtp.lemon.email'),(41,'domain_secure_subdomain','secure'),(49,'dns_dmarc_value',''),(48,'dns_dkim_value','');
+INSERT INTO `config` VALUES (1,'version','740'),(40,'domain_default','lemon.local'),(20,'role_domain_admin','3'),(21,'role_domain_mailbox','4'),(47,'dns_spf_value',''),(46,'dns_mx_value','172.19.25.3'),(41,'domain_secure_subdomain','secure'),(49,'dns_dmarc_value',''),(48,'dns_dkim_value','');
 /*!40000 ALTER TABLE `config` ENABLE KEYS */;
 UNLOCK TABLES;
 
