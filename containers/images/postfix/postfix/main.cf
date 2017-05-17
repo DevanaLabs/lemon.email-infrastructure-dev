@@ -39,7 +39,7 @@ mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
 inet_protocols = ipv4
-smtpd_recipient_restrictions = permit_mynetworks
+smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination
 #, check_policy_service unix:private/policy-spf
 broken_sasl_auth_clients = yes
 transport_maps = mysql:/etc/postfix/mysql/mysql-virtual-mailbox-transport.cf
