@@ -1,7 +1,7 @@
 ---
 version: '2'
 services:
-  postfix:
+  smtp:
     build: images/postfix
     container_name: smtp
     ports:
@@ -12,8 +12,9 @@ services:
         ipv4_address: 172.19.25.3
     env_file:
           - variables.env
+    links: [imap, spam, mysql]
 
-  dovecot:
+  imap:
     build: images/dovecot
     container_name: imap
     ports:
@@ -25,6 +26,7 @@ services:
         ipv4_address: 172.19.25.4
     env_file:
           - variables.env
+    links: [mysql]
 
   spam:
       build: images/spam-assassin
@@ -36,6 +38,7 @@ services:
           ipv4_address: 172.19.25.5
       env_file:
             - variables.env
+      links: [imap, mysql]
 
   mysql:
         build: sl_images/database
@@ -47,6 +50,8 @@ services:
             ipv4_address: 172.19.25.6
         env_file:
               - variables.env
+
+
 networks:
   app_net:
    driver: bridge
