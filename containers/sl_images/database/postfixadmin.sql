@@ -41,6 +41,12 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (1,'lemonuser@lemon.local','$1$1c0178de$w3hwUkssouwm0PlZBCxZn0','2016-11-04 16:14:17','2016-11-04 16:14:17',1,1,NULL,0);
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `alias`
 --
@@ -60,13 +66,6 @@ CREATE TABLE `alias` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Postfix Admin - Virtual Aliases';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `alias`
---
-
---
--- Table structure for table `alias_domain`
---
 
 DROP TABLE IF EXISTS `alias_domain`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -86,6 +85,11 @@ CREATE TABLE `alias_domain` (
 --
 -- Dumping data for table `alias_domain`
 --
+
+LOCK TABLES `alias_domain` WRITE;
+/*!40000 ALTER TABLE `alias_domain` DISABLE KEYS */;
+/*!40000 ALTER TABLE `alias_domain` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `config`
@@ -107,6 +111,11 @@ CREATE TABLE `config` (
 -- Dumping data for table `config`
 --
 
+LOCK TABLES `config` WRITE;
+/*!40000 ALTER TABLE `config` DISABLE KEYS */;
+INSERT INTO `config` VALUES (1,'version','740'),(40,'domain_default','lemon.local'),(20,'role_domain_admin','3'),(21,'role_domain_mailbox','4'),(47,'dns_spf_value',''),(46,'dns_mx_value','smtp.lemon.email'),(41,'domain_secure_subdomain','secure'),(49,'dns_dmarc_value',''),(48,'dns_dkim_value','');
+/*!40000 ALTER TABLE `config` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `contact`
@@ -156,6 +165,11 @@ CREATE TABLE `domain` (
 -- Dumping data for table `domain`
 --
 
+LOCK TABLES `domain` WRITE;
+/*!40000 ALTER TABLE `domain` DISABLE KEYS */;
+INSERT INTO `domain` VALUES (1,'lemon.local','',0,0,0,0,'virtual',0,'2017-02-14 12:17:00','2017-02-14 12:17:00',1,1,'mail',0,0,1,0);
+/*!40000 ALTER TABLE `domain` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `domain_admins`
@@ -177,6 +191,10 @@ CREATE TABLE `domain_admins` (
 -- Dumping data for table `domain_admins`
 --
 
+LOCK TABLES `domain_admins` WRITE;
+/*!40000 ALTER TABLE `domain_admins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `domain_admins` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `fetchmail`
@@ -210,6 +228,11 @@ CREATE TABLE `fetchmail` (
 -- Dumping data for table `fetchmail`
 --
 
+LOCK TABLES `fetchmail` WRITE;
+/*!40000 ALTER TABLE `fetchmail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fetchmail` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `log`
 --
@@ -227,14 +250,7 @@ CREATE TABLE `log` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Postfix Admin - Log';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `log`
---
 
-
---
--- Table structure for table `mailbox`
---
 
 DROP TABLE IF EXISTS `mailbox`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -251,7 +267,7 @@ CREATE TABLE `mailbox` (
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `active` tinyint(1) NOT NULL DEFAULT '1',
-  `transport` varchar(45) NOT NULL DEFAULT 'lmtp:45.56.106.187:24',
+  `transport` varchar(45) NOT NULL DEFAULT 'lmtp:172.19.25.4:24',
   `is_blockchain` tinyint(4) NOT NULL DEFAULT '0',
   `role_id` int(11) NOT NULL DEFAULT '0',
   `is_blocked` tinyint(4) NOT NULL DEFAULT '0',
@@ -273,6 +289,11 @@ CREATE TABLE `mailbox` (
 -- Dumping data for table `mailbox`
 --
 
+LOCK TABLES `mailbox` WRITE;
+/*!40000 ALTER TABLE `mailbox` DISABLE KEYS */;
+INSERT INTO `mailbox` VALUES (1,'lemonuser@lemon.local','$1$1c0178de$w3hwUkssouwm0PlZBCxZn0','lemonuser@lemon.local','lemonuser@lemon.local/',0,'lemonuser','lemon.local','2017-05-02 18:40:31','2017-05-02 18:40:31',1,'lmtp:172.19.25.4:24',0,4,0,0,'d4c01d3a6437ec9b4096b853fa4b8d30f591d483f450930ac2f66f67f8796c15',1,0,0,NULL,'','19177050425');
+/*!40000 ALTER TABLE `mailbox` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_billing_plan`
@@ -297,6 +318,11 @@ CREATE TABLE `mu_billing_plan` (
 -- Dumping data for table `mu_billing_plan`
 --
 
+LOCK TABLES `mu_billing_plan` WRITE;
+/*!40000 ALTER TABLE `mu_billing_plan` DISABLE KEYS */;
+INSERT INTO `mu_billing_plan` VALUES (1,'Lemon Email Professional','P-1JC53905K8403832DZZ3NL5Y','Real PayPal This time!',20,1,0);
+/*!40000 ALTER TABLE `mu_billing_plan` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_client`
@@ -317,6 +343,11 @@ CREATE TABLE `mu_client` (
 -- Dumping data for table `mu_client`
 --
 
+LOCK TABLES `mu_client` WRITE;
+/*!40000 ALTER TABLE `mu_client` DISABLE KEYS */;
+INSERT INTO `mu_client` VALUES (1,'Client 1',1),(2,'Client 2',1),(3,'vanja test',1),(4,'vanja test2',1),(5,'vanja test3',1),(6,'vanja test4',1),(7,'vanja test5',1),(8,'mydomain.com',1),(9,'csadsadsadsa.com',1),(10,'mica.gey',1),(11,'mica.feg',1),(12,'zasto.yu',1),(13,'borg.email',1),(14,'rade.com',1),(15,'bojan.email',1),(16,'asdf.com',1),(17,'radekralj.com',1),(18,'sda.com',1),(19,'test.rs',1),(20,'asdsa.com',1),(21,'sdaas.com',1),(22,'asddasd.com',1),(23,'test.com',1),(24,'symbol.agency',1),(26,'nikola.com',1),(27,'klotfrket.co',1),(28,'malisa.com',1);
+/*!40000 ALTER TABLE `mu_client` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_invoice`
@@ -340,6 +371,12 @@ CREATE TABLE `mu_invoice` (
 -- Dumping data for table `mu_invoice`
 --
 
+LOCK TABLES `mu_invoice` WRITE;
+/*!40000 ALTER TABLE `mu_invoice` DISABLE KEYS */;
+INSERT INTO `mu_invoice` VALUES (1,70000,NULL,669,'2017-05-03 15:13:36',2.00);
+/*!40000 ALTER TABLE `mu_invoice` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `mu_monthly_active`
 --
@@ -361,6 +398,10 @@ CREATE TABLE `mu_monthly_active` (
 -- Dumping data for table `mu_monthly_active`
 --
 
+LOCK TABLES `mu_monthly_active` WRITE;
+/*!40000 ALTER TABLE `mu_monthly_active` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mu_monthly_active` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_payment`
@@ -387,6 +428,12 @@ CREATE TABLE `mu_payment` (
 --
 -- Dumping data for table `mu_payment`
 --
+
+LOCK TABLES `mu_payment` WRITE;
+/*!40000 ALTER TABLE `mu_payment` DISABLE KEYS */;
+INSERT INTO `mu_payment` VALUES ('PAY-2A512691BF7222710LEFQPTY',20.00,NULL,729,'2017-05-04 12:51:59',NULL,NULL,NULL,NULL,NULL),('PAY-7B742110R0515835ALEE5OYQ',2.00,NULL,669,'2017-05-03 15:13:06','2017-05-03 13:13:33',NULL,1,NULL,NULL),('PAY-9M568907EE859671FLEE6RQI',20.00,NULL,673,'2017-05-03 16:27:13',NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `mu_payment` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_payment_log`
@@ -415,6 +462,11 @@ CREATE TABLE `mu_payment_log` (
 -- Dumping data for table `mu_payment_log`
 --
 
+LOCK TABLES `mu_payment_log` WRITE;
+/*!40000 ALTER TABLE `mu_payment_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mu_payment_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `mu_price`
 --
@@ -438,6 +490,10 @@ CREATE TABLE `mu_price` (
 -- Dumping data for table `mu_price`
 --
 
+LOCK TABLES `mu_price` WRITE;
+/*!40000 ALTER TABLE `mu_price` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mu_price` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_privs`
@@ -458,6 +514,11 @@ CREATE TABLE `mu_privs` (
 -- Dumping data for table `mu_privs`
 --
 
+LOCK TABLES `mu_privs` WRITE;
+/*!40000 ALTER TABLE `mu_privs` DISABLE KEYS */;
+INSERT INTO `mu_privs` VALUES (13,3,'admin_user'),(14,3,'admin_domains'),(15,3,'admin_mailboxes');
+/*!40000 ALTER TABLE `mu_privs` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_role`
@@ -478,6 +539,11 @@ CREATE TABLE `mu_role` (
 -- Dumping data for table `mu_role`
 --
 
+LOCK TABLES `mu_role` WRITE;
+/*!40000 ALTER TABLE `mu_role` DISABLE KEYS */;
+INSERT INTO `mu_role` VALUES (1,'superadmin',1),(2,'guest',1),(3,'Domain admin',1),(4,'Mailbox',0);
+/*!40000 ALTER TABLE `mu_role` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mu_subscription`
@@ -500,6 +566,12 @@ CREATE TABLE `mu_subscription` (
 -- Dumping data for table `mu_subscription`
 --
 
+LOCK TABLES `mu_subscription` WRITE;
+/*!40000 ALTER TABLE `mu_subscription` DISABLE KEYS */;
+INSERT INTO `mu_subscription` VALUES ('0',729,NULL,NULL,'EC-98R890974K8126531'),('0',763,NULL,NULL,'EC-8JP02394XE915271E'),('0',777,NULL,NULL,'EC-4YB10192H2020540S');
+/*!40000 ALTER TABLE `mu_subscription` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `mu_transport`
 --
@@ -520,6 +592,11 @@ CREATE TABLE `mu_transport` (
 -- Dumping data for table `mu_transport`
 --
 
+LOCK TABLES `mu_transport` WRITE;
+/*!40000 ALTER TABLE `mu_transport` DISABLE KEYS */;
+INSERT INTO `mu_transport` VALUES (1,'smtp:172.19.25.3:25',0,0);
+/*!40000 ALTER TABLE `mu_transport` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `quota`
@@ -540,6 +617,11 @@ CREATE TABLE `quota` (
 -- Dumping data for table `quota`
 --
 
+LOCK TABLES `quota` WRITE;
+/*!40000 ALTER TABLE `quota` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quota` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `quota2`
 --
@@ -559,6 +641,11 @@ CREATE TABLE `quota2` (
 -- Dumping data for table `quota2`
 --
 
+LOCK TABLES `quota2` WRITE;
+/*!40000 ALTER TABLE `quota2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quota2` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `reset_tokens`
 --
@@ -572,15 +659,6 @@ CREATE TABLE `reset_tokens` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `reset_tokens`
---
-
---
--- Table structure for table `vacation`
---
 
 DROP TABLE IF EXISTS `vacation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -602,6 +680,10 @@ CREATE TABLE `vacation` (
 -- Dumping data for table `vacation`
 --
 
+LOCK TABLES `vacation` WRITE;
+/*!40000 ALTER TABLE `vacation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vacation` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `vacation_notification`
@@ -622,6 +704,11 @@ CREATE TABLE `vacation_notification` (
 --
 -- Dumping data for table `vacation_notification`
 --
+
+LOCK TABLES `vacation_notification` WRITE;
+/*!40000 ALTER TABLE `vacation_notification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vacation_notification` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Temporary table structure for view `view_domain_transport`
@@ -754,7 +841,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`postfixadmin`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_domain_transport` AS select `d`.`domain` AS `domain`,`t`.`value` AS `transport`,`d`.`active` AS `active`,`d`.`backupmx` AS `backupmx` from (`domain` `d` join `mu_transport` `t` on(((`t`.`is_blockchain` = `d`.`is_secure`) and (`t`.`is_relay` = `d`.`is_relay`)))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -772,7 +859,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`postfixadmin`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_mailbox` AS select `m`.`mailbox_id` AS `mailbox_id`,`m`.`username` AS `username`,`m`.`password` AS `password`,`m`.`name` AS `name`,`m`.`maildir` AS `maildir`,`m`.`quota` AS `quota`,`m`.`local_part` AS `local_part`,`m`.`domain` AS `domain`,`m`.`created` AS `created`,`m`.`modified` AS `modified`,`m`.`active` AS `active`,`m`.`transport` AS `transport`,`m`.`is_blockchain` AS `is_blockchain`,`m`.`role_id` AS `role_id`,`m`.`is_blocked` AS `is_blocked`,`m`.`client_id` AS `client_id`,`m`.`jwt` AS `jwt`,`m`.`has_secure_email` AS `has_secure_email`,`m`.`is_payed` AS `is_payed`,`m`.`tier_type` AS `tier_type`,`m`.`payed_until` AS `payed_until`,`m`.`subscription_id` AS `subscription_id`,`m`.`phone` AS `phone`,`d`.`is_dns_valid` AS `is_dns_valid`,`d`.`active` AS `domain_active` from (`mailbox` `m` join `domain` `d` on((`m`.`domain` = `d`.`domain`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -790,7 +877,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`postfixadmin`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_mailbox_roles` AS select `mailbox`.`username` AS `username`,`mailbox`.`password` AS `password`,`mailbox`.`name` AS `name`,`mailbox`.`maildir` AS `maildir`,`mailbox`.`quota` AS `quota`,`mailbox`.`local_part` AS `local_part`,`mailbox`.`domain` AS `domain`,`mailbox`.`created` AS `created`,`mailbox`.`modified` AS `modified`,`mailbox`.`active` AS `active`,`mailbox`.`transport` AS `transport`,`mailbox`.`is_blockchain` AS `is_blockchain`,`mailbox`.`role_id` AS `role_id`,`mailbox`.`is_blocked` AS `is_blocked`,`mailbox`.`client_id` AS `client_id`,`mailbox`.`has_secure_email` AS `has_secure_email`,`mailbox`.`is_payed` AS `is_payed`,`mu_role`.`name` AS `role_name` from (`mailbox` left join `mu_role` on((`mailbox`.`role_id` = `mu_role`.`role_id`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -808,7 +895,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`postfixadmin`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_mailbox_transport` AS select `mailbox`.`username` AS `username`,`mailbox`.`name` AS `name`,`mailbox`.`maildir` AS `maildir`,`mailbox`.`domain` AS `domain`,`mailbox`.`local_part` AS `local_part`,`mailbox`.`active` AS `active`,`mailbox`.`is_blockchain` AS `is_blockchain`,`mu_transport`.`value` AS `transport` from (`mailbox` join `mu_transport` on((`mu_transport`.`is_blockchain` = `mailbox`.`is_blockchain`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -826,7 +913,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`postfixadmin`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_monthly_active` AS select `ma`.`mailbox_id` AS `mailbox_id`,`ma`.`month` AS `month`,`ma`.`year` AS `year`,`ma`.`datetime_created` AS `datetime_created`,`ma`.`is_billed` AS `is_billed`,`m`.`domain` AS `domain`,`m`.`username` AS `username`,`m`.`tier_type` AS `tier_type`,`d`.`client_id` AS `client_id` from ((`mu_monthly_active` `ma` join `mailbox` `m` on((`m`.`mailbox_id` = `ma`.`mailbox_id`))) join `domain` `d` on((`d`.`domain` = `m`.`domain`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
