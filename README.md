@@ -43,7 +43,7 @@ PASSWORD: lemonuser
 ## Login
 
 To use this you can connect from any email client, such as Thunderbird. 
-Use information from "Configs" section.
+Use the information provided from the "Configs" section.
 
 Example:
 
