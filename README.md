@@ -25,7 +25,7 @@ In order to run everything we will first need to install docker and docker-compo
 1. Run docker-compose
 
     ```
-    cd lemon.email-infrastructure-dev/containers
+    cd lemon.email-infrastructure-dev
     docker-compose up
     ```
     
