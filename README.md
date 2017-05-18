@@ -36,7 +36,8 @@ SMTP: 172.19.25.3:25
 
 IMAP: 172.19.25.4:143
 
-ACCOUNT: lemonuser@lemon.local 
+ACCOUNT: lemonuser@lemon.local
+
 PASSWORD: lemonuser
 
 ## Login
