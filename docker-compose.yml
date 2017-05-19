@@ -2,7 +2,7 @@
 version: '2'
 services:
   postfix:
-    build: images/postfix
+    image: devanalabs/lemonemail-dev.postfix
     container_name: postfix
     ports:
       - "25:25"
@@ -15,7 +15,7 @@ services:
     links: [dovecot, spam, mysql]
 
   dovecot:
-    build: images/dovecot
+    image: devanalabs/lemonemail-dev.dovecot
     container_name: dovecot
     ports:
       - "993:993"
@@ -29,7 +29,7 @@ services:
     links: [mysql]
 
   spam:
-      build: images/spam-assassin
+      image: devanalabs/lemonemail-dev.spam
       container_name: spam
       ports:
         - "10024:10024"
@@ -41,7 +41,7 @@ services:
       links: [dovecot, mysql]
 
   mysql:
-        build: sl_images/database
+        image: devanalabs/lemonemail-dev.mysql
         container_name: mysql
         ports:
           - "3306:3306"
