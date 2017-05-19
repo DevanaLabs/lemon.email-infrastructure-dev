@@ -25,7 +25,7 @@ In order to run everything we will first need to install docker and docker-compo
 1. Run docker-compose
 
     ```
-    cd lemon.email-infrastructure-dev/containers
+    cd lemon.email-infrastructure-dev
     docker-compose up
     ```
     
@@ -36,13 +36,14 @@ SMTP: 172.19.25.3:25
 
 IMAP: 172.19.25.4:143
 
-ACCOUNT: lemonuser@lemon.local 
+ACCOUNT: lemonuser@lemon.local
+
 PASSWORD: lemonuser
 
 ## Login
 
 To use this you can connect from any email client, such as Thunderbird. 
-Use information from "Configs" section.
+Use the information provided from the "Configs" section.
 
 Example:
 
