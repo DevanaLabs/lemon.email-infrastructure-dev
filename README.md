@@ -1,10 +1,10 @@
 # lemon.email-infrastructure-dev
-Lemon Email infrastructure that can be deployed on local machine used for testing and development.
+Lemon Emails regular email containerized infrastructure that can be deployed on local machine used for testing and development.
 
 
 ## Prerequisites 
 
-In order to run everything we will first need to install docker and docker-compose. 
+In order to run everything we will need to install docker and docker-compose. 
 
 1. Install docker: 
 
@@ -49,5 +49,5 @@ Example:
 
 ![alt text](http://i.imgur.com/laAS6N7.png)
 
-Note: External emails will be flagged as spam and they cannot be replied to.
+Note: Emails sent to external emails will be marked as spam. You also cannot reply to those emails since they are sent from "localhost".
 
