@@ -1,9 +1,9 @@
 ---
 version: '2'
 services:
-  smtp:
+  postfix:
     build: images/postfix
-    container_name: smtp
+    container_name: postfix
     ports:
       - "25:25"
       - "465:465"
@@ -12,11 +12,11 @@ services:
         ipv4_address: 172.19.25.3
     env_file:
           - variables.env
-    links: [imap, spam, mysql]
+    links: [dovecot, spam, mysql]
 
-  imap:
+  dovecot:
     build: images/dovecot
-    container_name: imap
+    container_name: dovecot
     ports:
       - "993:993"
       - "143:143"
@@ -38,7 +38,7 @@ services:
           ipv4_address: 172.19.25.5
       env_file:
             - variables.env
-      links: [imap, mysql]
+      links: [dovecot, mysql]
 
   mysql:
         build: sl_images/database
