@@ -12,7 +12,7 @@ services:
         ipv4_address: 172.19.25.3
     env_file:
           - variables.env
-    links: [dovecot, spam, mysql]
+    links: [dovecot, spam, mysql, dkim]
 
   dovecot:
     image: devanalabs/lemonemail-dev.dovecot
@@ -50,7 +50,16 @@ services:
             ipv4_address: 172.19.25.6
         env_file:
               - variables.env
-
+  dkim:
+        image: devanalabs/lemonemail-dev.dkim
+        container_name: dkim
+        ports:
+          - "8891:8891"
+        networks:
+          app_net:
+            ipv4_address: 172.19.25.7
+        env_file:
+              - variables.env
 
 networks:
   app_net:
