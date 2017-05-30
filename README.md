@@ -16,13 +16,23 @@ In order to run everything we will need to install docker and docker-compose.
     
 3. Clone repo
 
+```
+git clone git@github.com:DevanaLabs/lemon.email-infrastructure-dev.git
+```
+
+## Config
+
+Run config.sh script and enter your domain name to be updated in dkim container
+
     ```
-    git clone git@github.com:DevanaLabs/lemon.email-infrastructure-dev.git
+    ./config.sh 
+    Enter your domain eg: example.com
+    example.com
     ```
 
 ## Startup
 
-1. Run docker-compose
+Run docker-compose
 
     ```
     cd lemon.email-infrastructure-dev
@@ -30,7 +40,7 @@ In order to run everything we will need to install docker and docker-compose.
     ```
     
     
-## Configs
+## Settings
 
 SMTP: 172.19.25.3:25
 
